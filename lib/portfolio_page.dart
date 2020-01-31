@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'TranslateOnHover.dart';
+import 'ImageTranslateOnHover.dart';
 
 class PortFolioPage extends StatelessWidget {
   @override
@@ -30,22 +30,12 @@ class PortFolioPage extends StatelessWidget {
             margin: EdgeInsets.only(top: 40, bottom: 40),
             child: Wrap(
               children: <Widget>[
-                _protfolioItem(),
-                _protfolioItem(),
-                _protfolioItem(),
-                _protfolioItem(),
-                _protfolioItem(),
-                _protfolioItem(),
-                _protfolioItem(),
-                _protfolioItem(),
-                _protfolioItem(),
-                _protfolioItem(),
-                _protfolioItem(),
-                _protfolioItem(),
-                _protfolioItem(),
-                _protfolioItem(),
-                _protfolioItem(),
-                _protfolioItem(),
+                _protfolioItem("images/portfolio1.png"),
+                _protfolioItem("images/portfolio2.png"),
+                _protfolioItem("images/portfolio3.png"),
+                _protfolioItem("images/portfolio4.jpg"),
+                _protfolioItem("images/portfolio5.png"),
+                _protfolioItem("images/portfolio6.png"),
               ],
             ),
           )
@@ -54,14 +44,18 @@ class PortFolioPage extends StatelessWidget {
     );
   }
 
-  Widget _protfolioItem(){
+  Widget _protfolioItem(String image) {
     return Container(
       margin: EdgeInsets.only(top: 10, left: 10),
-      child: TranslateOnHover(
+      child: ImageTranslateOnHover(
         child: Container(
           width: 300,
           height: 200,
-          color: Colors.black54,
+          child: Image(
+            image: AssetImage(image),
+            width: 200,
+            fit: BoxFit.cover,
+          ),
         ),
       ),
     );

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'TranslateOnHover.dart';
+
 class AboutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -39,31 +41,33 @@ class AboutPage extends StatelessWidget {
               )),
           Container(
             margin: EdgeInsets.only(top: 25),
-            child: OutlineButton(
-              onPressed: () {},
-              borderSide: BorderSide(color: Colors.white, width: 3),
-              shape: new RoundedRectangleBorder(
-                  borderRadius: new BorderRadius.circular(5.0)),
-              hoverColor: Colors.white.withOpacity(0.3),
-              textColor: Colors.white,
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Icon(
-                    Icons.cloud_download,
-                    size: 20,
-                  ),
-                  SizedBox(
-                    width: 3,
-                  ),
-                  Text(
-                    "Download Resume",
-                  )
-                ],
+            child: TranslateOnHover(
+              child: OutlineButton(
+                onPressed: () {},
+                borderSide: BorderSide(color: Colors.white, width: 3),
+                shape: new RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(5.0)),
+                hoverColor: Colors.white.withOpacity(0.3),
+                textColor: Colors.white,
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Icon(
+                      Icons.cloud_download,
+                      size: 20,
+                    ),
+                    SizedBox(
+                      width: 3,
+                    ),
+                    Text(
+                      "Download Resume",
+                    )
+                  ],
+                ),
               ),
             ),
           ),
-          Container(
+          TranslateOnHover(
             child: OutlineButton(
               onPressed: () {},
               textColor: Colors.white,
