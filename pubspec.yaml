@@ -24,6 +24,8 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   universal_html:
+  font_awesome_flutter: 8.5.0
+
 
 dev_dependencies:
   flutter_test:
@@ -43,12 +45,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - images/portfolio1.png
-    - images/portfolio2.png
-    - images/portfolio3.png
-    - images/portfolio4.jpg
-    - images/portfolio5.png
-    - images/portfolio6.png
+    - images/
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,6 +1,10 @@
-import 'package:flutter/material.dart';
+import 'dart:js' as js;
 
-import 'TranslateOnHover.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
+import 'widgets/custom_button.dart';
 
 class AboutPage extends StatelessWidget {
   @override
@@ -32,66 +36,46 @@ class AboutPage extends StatelessWidget {
               child: Text(
                 "I am currently an Android developer working for Adit Microsys, Ahmedabad. and living in Ahmedabad, India.",
                 style: TextStyle(color: Colors.white, fontSize: 20),
+                textAlign: TextAlign.center,
               )),
           Container(
-              margin: EdgeInsets.only(top: 10),
+              margin: EdgeInsets.only(top: 10, left: 50, right: 50),
               child: Text(
-                "My hobbies also include making games, making music and drawing. I plan to make a cool game before I am 30!",
+                "I carry 2+ years of quality experience in developing native Android (Java) & Cross Platform apps for iOS & Android using Flutter also have expertise in PHP and MySQL as back-end based web applications development as well.",
                 style: TextStyle(color: Colors.white, fontSize: 20),
+                textAlign: TextAlign.center,
+              )),
+          Container(
+              margin: EdgeInsets.only(top: 10, left: 50, right: 50),
+              child: Text(
+                "I have worked with Startups as well as corporates to help them build their tech products and was involved from the idea stage, to project planning, iterate & make necessary changes according to user's feedback to raise the money through a crowdfunding campaign.i am expert in Rest Api both json and xml, Google maps,Firebase, Google ads,Firebase Expert, Turn off and on functionality of notification, Social media integration, Parse sdk, Pushwoosh notification, Integration vimeo or youtube video player, Integration pdf reader, Integration side menu navigation and background Services, Integration any other third party library etc etc .",
+                style: TextStyle(color: Colors.white, fontSize: 20),
+                textAlign: TextAlign.center,
               )),
           Container(
             margin: EdgeInsets.only(top: 25),
-            child: TranslateOnHover(
-              child: OutlineButton(
-                onPressed: () {},
-                borderSide: BorderSide(color: Colors.white, width: 3),
-                shape: new RoundedRectangleBorder(
-                    borderRadius: new BorderRadius.circular(5.0)),
-                hoverColor: Colors.white.withOpacity(0.3),
-                textColor: Colors.white,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Icon(
-                      Icons.cloud_download,
-                      size: 20,
-                    ),
-                    SizedBox(
-                      width: 3,
-                    ),
-                    Text(
-                      "Download Resume",
-                    )
-                  ],
+            child: Wrap(
+              children: <Widget>[
+                CustomButton(
+                    title: "LinkedIn",
+                    icon: FontAwesomeIcons.linkedinIn,
+                    onPressed: () {
+                      js.context
+                          .callMethod("open", ["https://github.com/ravi84184"]);
+                    }),
+                SizedBox(
+                  width: 10,
                 ),
-              ),
+                CustomButton(
+                    title: "Github",
+                    icon: FontAwesomeIcons.github,
+                    onPressed: () {
+                      js.context
+                          .callMethod("open", ["https://github.com/ravi84184?utf8=%E2%9C%93&tab=repositories&q=&type=&language=dart"]);
+                    }),
+              ],
             ),
-          ),
-          TranslateOnHover(
-            child: OutlineButton(
-              onPressed: () {},
-              textColor: Colors.white,
-              borderSide: BorderSide(color: Colors.white, width: 3),
-              shape: new RoundedRectangleBorder(
-                  borderRadius: new BorderRadius.circular(5.0)),
-              hoverColor: Colors.white.withOpacity(0.3),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Icon(
-                    Icons.linked_camera,
-                    size: 20,
-                  ),
-                  SizedBox(
-                    width: 3,
-                  ),
-                  Text(
-                    "LinkedIn Profile",
-                  ),
-                ],
-              ),
-            ),
-          ),
+          )
         ],
       ),
     );
